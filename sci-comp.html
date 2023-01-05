@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Yuhan's website</title>
+  <link rel="stylesheet" href="css/gridta.css"/>
+  <link rel="stylesheet" href="highlight/styles/default.min.css">
+</head>
+<body>
+	<header>
+		<ul class="head-container"> <!--class="head-container"-->
+			<li><a href="index.html">Home</a></li>
+			<li><a href="CV.html">CV/Resume</a></li>
+			<li><a href="physics.html">Physics Blog</a></li>  
+			<li><a href="tech.html">Code Blog</a></li>
+		</ul>
+	</header>
+	<nav class="nav-bar"> 
+		<ul class="nav-bar-list">
+			<li><a href="sci-comp.html">Computation workflow</a></li>
+			<li>Git</li>
+			<li><a href="pure-func.html">Pure function</a></li>
+		</ul>
+	</nav> 
+    <main>
+		<h1> Computation workflow</h1>
+		<p>The scientific computation workflow includes the following three parts: parameter initialization, program execution, and data storage. Below, I would like to share some of the practices that are helpful in my computation. I will use python for illustration. </p>
+		<h2> Parameter Initialization</h2>
+		<p>As we add more and more features to our program, one thing that might become problematic is how to store and save the parameters for our record. Imagine that your initial code has three initial parameters, and when you decide to add one more feature, the fourth parameter is needed. Now, you need to modify your code so that it can save this fourth parameter as well. 
+				
+		</p>
+		<p>Here, we show that using <b>class and object can make parameter (data) storage clear and worry-free</b>. In the following simple scenario, we wish to compute the average entanglement entropy for a random system. We wish to examine three lengths: 64, 128, and 256, and for each system length, we generate 100 samples and perform the ensemble average. Finally, we want to keep track of whether we are in debug mode. We are able to store all these parameters by creating a <code>Para</code> class: </p>
+<pre ><code># The following code is in `init_data.py`
+class Para:
+    def __init__(self):
+        self.L = [64, 128, 256]
+        self.sample = 100    
+        self.debug_mode = 1
+
+# The following code is in `main_func.py` 
+from init_para import Para
+
+def main():
+    # data initialization
+    para = Para()</code></pre> 
+		<p>This makes it easier to save the parameters of each run, because all we need is to save the object <code>para</code> rather than keeping track of each one of variables: <code>L</code>, <code>sample</code> and <code>debug_mode</code>. Now, if we want to add a fourth parameter <code>cross_ratio</code> and set it to "0.5", all we need to do is to add one more line to class Para: <code>self.cross_ratio = 0.5</code>. </p>  
+
+		<p><i>Years later, I realized this is essentially the same idea as <code>props</code> in React :)</i></p>
+
+		<h2>Functionality Realization</h2>
+		<p>Modular programming; DRY principal</p>
+
+		<h2>Data Storage</h2>
+	</main>
+	<footer>
+		<p>Copyright <span>&#169</span> Yuhan Liu 2023</p>
+	</footer>
+	<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
+	<!-- <script src="//unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script> -->
+	<script src="highlight/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</body>
+</html>
