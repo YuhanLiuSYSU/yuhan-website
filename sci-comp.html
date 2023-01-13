@@ -21,11 +21,13 @@
 			<li><a href="sci-comp.html">Computation workflow</a></li>
 			<li>Git</li>
 			<li><a href="pure-func.html">Pure function</a></li>
+			<li><a href="py-data-struc.html">Python data structure</a></li>
 		</ul>
 	</nav> 
     <main>
 		<h1> Computation workflow</h1>
-		<p>The scientific computation workflow includes the following three parts: parameter initialization, program execution, and data storage. Below, I would like to share some of the practices that are helpful in my computation. I will use python for illustration. </p>
+		<p> As a physics student, you might start to code before you really "learn" to code. It is true that we can do a lot of amazing things by simply being familiar with some basic statements such as <code>if-else</code> and <code>for</code>. However, as your project grows larger and larger, you might come to a point that you want to stop and think about how to organize your code, such that it is easy to extend, easy to read (after you leave it for a year). Here I would like to share some of the practices that are helpful in my computation, some of which I summarized from my own experience, and some of which I learnt from reading other people's high quality codes. I will use python for illustration. </p>
+
 		<h2> Parameter Initialization</h2>
 		<p>As we add more and more features to our program, one thing that might become problematic is how to store and save the parameters for our record. Imagine that your initial code has three initial parameters, and when you decide to add one more feature, the fourth parameter is needed. Now, you need to modify your code so that it can save this fourth parameter as well. 
 				
@@ -48,10 +50,17 @@ def main():
 
 		<p><i>Years later, I realized this is essentially the same idea as <code>props</code> in React :)</i></p>
 
+		As a side note, another way to achieve the similar funtionality is by using the Python dictionary. 
+
 		<h2>Functionality Realization</h2>
 		<p>Modular programming; DRY principal</p>
 
+		<h2>Test your module</h2>
+		<p> As you extend your program to code with more general cases, you would need to make sure that it still works well on your old code. To give us a piece of mind, we can write a test function and utilize the `assert` key word. </p>
+
 		<h2>Data Storage</h2>
+
+		<h2>Documentation</h2>
 	</main>
 	<footer>
 		<p>Copyright <span>&#169</span> Yuhan Liu 2023</p>

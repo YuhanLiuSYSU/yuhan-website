@@ -14,13 +14,13 @@ body {
                          "footer  footer"; 
     grid-template-rows: 40px 1fr 20px; 
     grid-template-columns: 240px 1fr; 
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   } 
 
 header { 
     grid-area: head; 
     background-color: #2b2d42;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-shadow: 5px 5px 5px gainsboro;
     
 } 
@@ -113,8 +113,18 @@ main h2{
     margin: 10px 0 10px 0px;
 }
 
+main h3{
+    padding: 5px 0 5px 0px ;
+    
+}
+
 main p{
+    
     padding: 6px 0 6px 0 ;
+    line-height: 20px;
+    /* font-size: 1.125rem; */
+    font-size: 1rem;
+    font-family: Arial;
 } 
 
 footer { 
