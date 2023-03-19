@@ -16,14 +16,30 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 } 
 
-.innerbody{
-  grid-area: main;
-  display: grid; 
-  grid-template-areas: "inner-navi  inner-main" ;                       
-  grid-template-columns: 240px 1fr; 
-  overflow-y: auto;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@media screen{
+  .innerbody{
+    grid-area: main;
+    display: grid; 
+    grid-template-areas: "inner-navi  inner-main" ;                       
+    grid-template-columns: 240px 1fr; 
+    overflow-y: auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 }
+
+
+@media print{
+  .innerbody{
+    grid-area: main;
+    display: grid; 
+    grid-template-areas:"inner-navi" 
+                        "inner-main" ;                       
+    grid-template-rows: 40px 1fr;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
+
 
 .header { 
   grid-area: head;
@@ -40,12 +56,12 @@
   justify-content: stretch;
 }  
 
-
+/* 
 ul{
   display: inline-flex;
   list-style: none;
   margin: 0;
-}
+} */
 
 
 .head-container li{
@@ -99,6 +115,11 @@ ul{
 }
 
 .nav-bar-list .nav-item:hover{
+  background-color: rgb(244, 244, 244);
+}
+
+.nav-bar-list li .focus{
+  /* background-color: rgb(228, 226, 226); */
   background-color: rgb(228, 226, 226);
 }
 
@@ -123,7 +144,7 @@ ul{
 }
 
 .inner-main h3{
-  padding: 5px 0 5px 0px ;
+  padding: 15px 0 5px 0px ;
   
 }
 
@@ -163,3 +184,20 @@ pre{
   /* border-radius: 10px; */
 }
 
+p ol{
+  margin: 10px 0 10px 30px;
+}
+
+p ul{
+  margin: 10px 0 10px 30px;
+}
+
+.para-like li{
+  margin: 4px 0 4px 0;
+}
+
+.inner-main .writing-sample{
+  font-family: Times;
+  background-color: cornsilk;
+  padding: 5px;
+}

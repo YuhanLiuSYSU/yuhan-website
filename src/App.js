@@ -6,6 +6,9 @@ import CompWorkflow from './components/CompWorkflow';
 import CodeBlogMain from './components/CodeBlogMain';
 import Git from './components/Git';
 import Pure from './components/Pure';
+
+import ScienceBlog from './components/ScienceBlog';
+import SciWrite from './components/SciWrite';
 import { Routes, Route, Link } from 'react-router-dom';
 import "../node_modules/highlight.js/styles/vs.css";
 
@@ -21,6 +24,7 @@ const App = () => {
           <nav className='head-container'>
             <Link to="/home">Home</Link>
             <Link to="/code-blog">Code Blog</Link>
+            <Link to="/science-blog">Physics Blog</Link>
           </nav>
         </div>
 
@@ -33,6 +37,10 @@ const App = () => {
             <Route path="py-data-struct" element={<PyDataStruct />} />
             <Route path="git" element={<Git />} />
             <Route path="pure-func" element={<Pure />} />
+          </Route>
+          <Route path="science-blog" element={<ScienceBlog/>}>
+            <Route index element={<CodeBlogMain />} />
+            <Route path="sci-write" element={<SciWrite />} />
           </Route>
           {/* <Route path="*" element={<NoMatch />} /> */}
         </Routes>
